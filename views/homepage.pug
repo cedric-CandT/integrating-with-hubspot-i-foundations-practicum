@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Recipes
+        a(href="/update-cobj") Add to this table
+        table
+            thead
+                tr
+                    th Name
+                    th Cuisine
+                    th Prep Time (Minutes)
+            tbody
+                each record in data
+                    tr
+                        td= record.properties.name
+                        td= record.properties.cuisine
+                        td= record.properties.prep_time_minutes

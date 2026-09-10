@@ -4,7 +4,22 @@ This repository is for the Integrating With HubSpot I: Foundations course. This 
 
 To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/52005987/objects/2-69019577/views/all/list
+
+## Custom object
+
+This app manages a **Recipes** custom object with three properties: `name` (string, required), `cuisine` (string), and `prep_time_minutes` (number). It's associated with the Contacts object.
+
+## Local setup
+
+1. In your HubSpot developer test account, create a private app named "`<Your Name>`'s Practicum Private App" with these scopes:
+   - `crm.schemas.custom` (read + write)
+   - `crm.objects.custom` (read + write)
+   - `crm.objects.contacts` (read + write)
+2. Copy `.env.example` to `.env` and paste in the private app's access token.
+3. `npm install`
+4. `npm run setup` — creates the Recipes custom object schema (associated with Contacts) and adds 3 sample records. It prints an `objectTypeId`; paste that into `.env` as `HUBSPOT_OBJECT_TYPE`.
+5. `npm start`, then open `http://localhost:3000`.
 
 ___
 ## Tips:

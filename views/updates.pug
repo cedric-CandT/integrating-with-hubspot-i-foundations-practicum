@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .form-wrapper
+            h1 Add a Recipe
+            form(method="POST" action="/update-cobj")
+                label(for="name") Name
+                input(type="text" id="name" name="name" required)
+
+                label(for="cuisine") Cuisine
+                input(type="text" id="cuisine" name="cuisine")
+
+                label(for="prep_time_minutes") Prep Time (Minutes)
+                input(type="number" id="prep_time_minutes" name="prep_time_minutes")
+
+                input(type="submit" value="Submit")
+            a(href="/") Return to the homepage
